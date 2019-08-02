@@ -138,7 +138,7 @@ const korpa = {
 
     const trTotal = document.createElement('tr');
     const tdTotal = document.createElement('td');
-    tdTotal.innerHTML= `Ukupan iznos: ${formatiranje.format(korpa.ukupanIznos())} dinara`;
+    tdTotal.innerHTML= `Ukupan iznos: ${formatiranje.format(this.ukupanIznos())} dinara`;
     tdTotal.id = 'korpaTotal';
     tdTotal.colSpan = 5;
     tdTotal.style = 'text-align: right; font-weight:700; font-size: 18px;';
@@ -149,8 +149,10 @@ const korpa = {
     btnNaruci.className = "btnNaruci";
     btnNaruci.textContent = "Naruči";
     btnNaruci.addEventListener('click', () => {
+      (this.prikaziKorpu().length !== 0) ? 
+        poruke.poruka('Narudžbina je uspošno prosleđena! Hvala!', 'zeleno')
+      : poruke.poruka('Korpa je prazna!', 'crveno');
       sessionStorage.removeItem('korpa');
-      poruke.poruka('Narudžbina je uspošno prosleđena! Hvala!', 'zeleno');
       document.querySelector('#proizvodi').innerHTML = '';
       this.napraviTabelu();
     });
