@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Laptop Shop</title>
+    <link rel="stylesheet" href="css/main.css">   
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            proizvodi.prikaziSve(podaci);
+            document.querySelector('#korpa').innerHTML = `Korpa: ${formatiranje.format(korpa.ukupanIznos())} din`;
+        });
+    </script>   
+</head>
+<body>
+    <header>
+        <div class="container">
+            <ul class="levo">
+                <li><a href="index.html" class="home">LaptopShop</a></li>
+            </ul>
+            <ul class="desno">
+                <li><a href="korpa.html" class="korpa" id="korpa">Korpa</a></li>
+            </ul>
+        </div>
+    </header>
+	<div class="container">
+        <div class="container">
+            <div id="filter">
+                <input type="text" id="inp" placeholder="Pretraga po imenu"><hr>
+                <input type="number" id="maxCena" placeholder="Maksimalna cena">
+                <button id="btnMaxCena">Pronađi</button><hr>
+                <input type="number" id="minCena" placeholder="Minimalna cena">
+                <button id="btnMinCena">Pronađi</button>
+                <select id="polje">
+                    <option value="naziv">Naziv</option>
+                    <option value="cena">Cena</option>
+                </select>
+                <select id="sort">
+                    <option value="-1">Opadajuće</option>
+                    <option value="1">Rastuće</option>
+                </select>
+            </div>
+        </div>
+        <div id="proizvodi"></div>
+    </div>
+<script src="js/podaci.js"></script> 
+<script src="js/poruke.js"></script> 
+<script src="js/korpa_obj.js"></script>
+<script src="js/main.js"></script> 
+</body>
+</html>

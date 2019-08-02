@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap');
+
+html body{ width: 100%;height: 100%;margin: 0;padding: 0; } */
+body * { margin: 0;padding: 0;box-sizing: border-box; }
+a { text-decoration: none; } 
+ul, ol{ list-style-type: none; }
+html { font-family: 'Lato', 'Times New Roman', Times, serif; overflow-y: scroll; }
+:root {
+    --border-sivi: 1px solid rgb(146, 146, 146);
+    --box-shadow-veci: 0 5px 10px rgba(0,0,0, .2);
+    --box-shadow-manji: 0 5px 10px rgba(0,0,0, .2);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+header {
+    height: 50px;
+    background: rgba(146, 146, 146, 0.9);
+    margin-bottom: 20px;    
+}
+
+hr { margin: 5px 15px 18px; }
+.img-mala { width: 200px; }
+
+#inp, #minCena, #maxCena, #btnMinCena, #btnMaxCena {
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: var(--border-sivi);
+    border-radius: 3px;
+}
+.levo {
+    padding-inline-start: 0;
+}
+.desno {
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+.korpa, .home {
+    color: black;
+    background: rgb(224, 224, 224);
+    padding: .5em 2em;
+    border-radius: 50px;
+    transition: all .2s;
+}
+
+.home { border-radius: 3px; }
+.korpa:hover, .home:hover { background: #ccc; }
+#proizvodi { width: 100%; }
+
+.proizvod, #filter, .proizvod-nema {
+    border: var(--border-sivi);
+    box-shadow: var(--box-shadow-veci);
+    border-radius: 5px;
+    padding: 10px;
+}
+.proizvod-nema {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 700;
+    border: var(--border-sivi);
+}
+
+#filter {
+    width: 300px;
+    padding: 50px 10px;
+    margin-right: 10px;
+    text-align: center;
+    height: 250px;
+}
+
+.proizvod {
+    flex: 1 0 wrap;
+    flex-basis: 300px;
+    display: inline-block;
+    text-align:center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border: var(--border-sivi);
+    transition: all .2s;
+    box-shadow: var(--box-shadow-veci);
+}
+
+.proizvod:hover {
+    transform: scale(1.05);
+}
+
+.linkovi {
+    text-decoration: none;
+    color: rgba(0,0,0, .75)
+}
+.btnDetaljnije, .btnKupi, .btnObrisi, .btnNaruci {
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(0,0,0, .2);
+    font-size: .95em;
+    letter-spacing: 2px;
+    background-color: rgb(224, 224, 224);
+    padding: 1em 0;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-manji);
+    transition: all .1s;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.btnDetaljnije:hover, .btnKupi:hover, .btnNaruci:hover {
+    transform: translateY(-2px);
+}
+.btnDetaljnije:active, .btnKupi:active, .btnObrisi:active, .btnNaruci:active {
+    transform: translateY(2px) scale(0.98);
+}
+.btnDetaljnije:hover {
+    background-color: #ccc;
+}
+
+.btnKupi, .btnObrisi {
+    background-color: red;
+    color: white;
+    font-weight: 700;
+}
+
+.btnKupi:hover, .btnObrisi:hover { background-color: rgb(215, 0, 0); }
+
+.btnObrisi {
+    padding: 5px 10px;;
+}
+
+.btnNaruci {
+    width: 30%;
+    font-size: 16px;
+    font-weight: 700;
+    float: right;
+}
+#btnMinCena, #btnMaxCena { transition: all .1s; }
+
+#btnMinCena:hover, #btnMaxCena:hover {
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+#btnMinCena:active, #btnMaxCena:active { transform: translateY(2px) scale(.98) }
+
+/********************* Detaljnije strana ***************************/
+
+.proizvod-detaljnije {
+    max-width: 1200px;
+    text-align: center;
+}
+
+.slika-velika {
+    width: 900px;
+}
+
+.inline-p {
+    display: inline-block;
+}
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    text-align: left;
+    display: table;
+}
+.tablea-korpa th {
+    padding: 20px;
+    border-bottom: var(--border-sivi);
+}
+tr:nth-child(even) {background-color: rgb(242, 242, 242);}
+
+.tabela td {
+    border-bottom: var(--border-sivi);
+    padding: 10px 20px;
+}
+.tdKey {
+    text-transform: capitalize;
+    width: 30%;
+}
+
+/* korpa css dodatno */
+
+.slika-korpa {
+    height: 75px;
+}
+.ime-korpa {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.kolicina-centar {
+    text-align: center;
+}
+
+/************* poruke ***************/
+
+.zeleno,
+.crveno {
+  position: fixed;
+  top: 3.5em;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 1em 3em;
+  border-radius: 3px;
+  color: white;
+  margin-bottom: 3px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+  opacity: 0.9;
+  z-index: 50;
+}
+
+.crveno {
+  background-color: #f44336;
+}
+
+.zeleno {
+  background-color: #4caf50;
+}
